@@ -1,0 +1,60 @@
+{
+  "name": "cipher-assistent",
+  "displayName": "Cipher Assistent",
+  "description": "Minimal local bridge from Telegram to GitHub Copilot Chat in VS Code.",
+  "version": "0.1.0",
+  "publisher": "cipher-assistent",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cipherAssistent.startBridge",
+        "title": "Cipher Assistent: Start Bridge"
+      },
+      {
+        "command": "cipherAssistent.stopBridge",
+        "title": "Cipher Assistent: Stop Bridge"
+      }
+    ],
+    "configuration": {
+      "title": "Cipher Assistent",
+      "properties": {
+        "cipherAssistent.extensionServerPort": {
+          "type": "number",
+          "default": 3000,
+          "minimum": 1024,
+          "maximum": 65535,
+          "description": "Port for the extension HTTP server. Must match EXT_SERVER_PORT in the Python bot."
+        },
+        "cipherAssistent.botServerPort": {
+          "type": "number",
+          "default": 4000,
+          "minimum": 1024,
+          "maximum": 65535,
+          "description": "Port for the Python bot callback server. Must match BOT_SERVER_PORT in the Python bot."
+        },
+        "cipherAssistent.responseFilePath": {
+          "type": "string",
+          "default": "",
+          "description": "Optional absolute override for the response file path."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}

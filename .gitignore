@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Node / VS Code extension
+extension/node_modules/
+extension/out/
+extension/*.vsix
+
+# Local secrets and runtime files
+bot/.env
+cipher_response.txt
+*.log
+
+# Editor
+.vscode/settings.json
+.DS_Store
+Thumbs.db
