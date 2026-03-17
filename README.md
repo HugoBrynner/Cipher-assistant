@@ -73,7 +73,7 @@ cipher-assistent/
 - Python 3.11+
 - Node.js 18+
 - VS Code 1.85+
-- A Telegram bot token from BotFather
+- A Telegram bot token from @BotFather and chatID from @userinfobot
 - GitHub Copilot and GitHub Copilot Chat enabled in VS Code
 
 ### VS Code extensions
@@ -144,7 +144,7 @@ The bot starts:
 - the Telegram polling loop
 - a local callback server on `127.0.0.1`
 
-## Step 2. Start the VS Code extension
+## Step 2. Start the VS Code extension by pressing F5 in your VS code where bot.py runs
 
 When the extension activates, it starts a local HTTP server and begins watching the response file.
 
@@ -213,7 +213,7 @@ That makes it easier for others to understand, run, and adapt.
 - It depends on GitHub Copilot Chat being available in VS Code
 - It is designed for a single local machine workflow
 - It does not include authentication beyond Telegram chat allow-listing
-- It does not include conversation history storage
+- It does not include conversation history storage, you can set this up in a memory.md file if needed
 - It does not include model routing or provider abstraction
 
 ## Customization ideas
@@ -227,6 +227,7 @@ You can extend this starter with:
 - approvals before sending prompts
 - multi-workspace routing
 - alternative response-file formats
+- module section
 
 ## License
 
